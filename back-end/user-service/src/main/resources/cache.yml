@@ -1,0 +1,3 @@
+users-account:
+  ttl: 3600000
+  maxIdleTime: 720000

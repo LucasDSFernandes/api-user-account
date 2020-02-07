@@ -1,0 +1,35 @@
+#MYSQL
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/projectUser?useTimezone=true&serverTimezone=UTC
+    password: sysadm
+    username: root
+#exibe comando sql     
+  jpa:
+    show-sql : true
+    generate-ddl : true
+    properties:
+      hibernate:
+        show_sql: true 
+        use_sql_comments: true
+        format_sql: true
+        type_sql: true
+        ddl-auto: updates   
+
+security:
+  oauth2:
+    client:
+      access-token-validity-seconds: 1800
+      authorized-grant-types: password,refresh_token
+      client-id: lucasdsf
+      client-secret: $2a$10$zX8v86SyTpSivZWdCO9yqu9ccAK5nb5xs9Fa2xaj7F0Ecjn9jr0JC
+      resource-ids: resource_id
+      scope: read,write
+    resource: 
+      filter-order: 3#  autoconfigure:#    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration     
+auth:
+  api:
+    name: auth-service
+    url: http://localhost:8082

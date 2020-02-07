@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/projectUser?useTimezone=true&serverTimezone=UTC
+    password: sysadm
+    username: root
+#exibe comando sql     
+  jpa:
+    show-sql : true
+    generate-ddl : true
+    properties:
+      hibernate:
+        show_sql: true 
+        use_sql_comments: true
+        format_sql: true
+        type_sql: true
+        ddl-auto: updates   
+# JWT
+security:
+  jwt:
+    expiresInHours: 15
+    secret: $10$6GBcDoRjwQcHvZpdGtEXIuNO/e4CMgWochkaQwa4RzvvztlJl0Pcq
+            
